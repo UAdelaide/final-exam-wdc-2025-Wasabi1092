@@ -17,12 +17,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 (async () => {
   try {
     const db = mysql2.createConnection({
-      host: "localhost",
+      host: "localhost"
     });
   } catch (err) {
     // handle error
   }
-});
+})();
 
 app.use('/api', apiRouter);
 
