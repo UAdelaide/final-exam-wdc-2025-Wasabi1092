@@ -41,5 +41,4 @@ COUNT(WalkRequests.status) AS completed_walks
 FROM WalkRatings
 JOIN Users ON WalkRatings.walker_id=Users.user_id
 JOIN WalkRequests ON WalkRequests.request_id=WalkRatings.request_id
-GROUP BY Users.username
-WHERE WalkRequests.status='completed';
+GROUP BY Users.username;
