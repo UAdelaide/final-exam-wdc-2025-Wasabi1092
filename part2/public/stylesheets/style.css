@@ -176,6 +176,7 @@ input {
 #dogs td, #dogs th {
     width: auto;
     padding-right: 3em;
+    padding-left: 1em;
 }
 
 #dogs td img{
