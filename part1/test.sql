@@ -27,7 +27,7 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 -- Insert reviews into table WalkRatings;
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
 (1, (SELECT user_id from Users WHERE username='bobwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
-(1, (SELECT user_id from Users WHERE username='bobwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
-(1, (SELECT user_id from Users WHERE username='bobwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
-(1, (SELECT user_id from Users WHERE username='bobwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
-(1, (SELECT user_id from Users WHERE username='bobwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
+(2, (SELECT user_id from Users WHERE username='bobwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
+(3, (SELECT user_id from Users WHERE username='ethanwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
+(4, (SELECT user_id from Users WHERE username='ethanwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
+(5, (SELECT user_id from Users WHERE username='ethanwalker'), (SELECT user_id from Users WHERE username='alice123'), 4, "N/A"),
