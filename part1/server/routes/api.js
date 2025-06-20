@@ -34,9 +34,11 @@ router.get('/walkers/summary', async function (req, res) {
     host: 'localhost',
     database: 'DogWalkService'
   });
+  let payload = [];
   const [walkers] = await db.execute(`
-    SELECT * FROM Users
+    SELECT * FROM Users WHERE role='walker';
   `);
+  for
   res.send(walkers);
 });
 
