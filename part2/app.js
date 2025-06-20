@@ -23,7 +23,10 @@ app.use('/', router.post("/login", (req, res) => {
   if (rows.length === 0) {
     res.status(200).json({ result: 'failure' });
   } else {
-    if (rows[0].password_hash === )
+    // normally you would use whatever hashing alg to check this, but since the password is unhashed, just do this
+    if (rows[0].password_hash === password) {
+
+    }
   }
 }))
 
