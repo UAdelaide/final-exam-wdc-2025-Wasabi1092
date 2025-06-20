@@ -97,9 +97,11 @@
                 <option value=${obj[i].name}>${obj[i].name}</option>
               `;
             }
+          } catch {
+            return;
           }
         }
-        
+
         async function loadWalks() {
           try {
             const res = await fetch('/api/walks');
