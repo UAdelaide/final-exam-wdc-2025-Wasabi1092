@@ -60,7 +60,6 @@ router.get("/dogs", async(req, res) => {
     const [rows] = await db.execute(`SELECT name FROM Dogs WHERE owner_id=?`, [req.session.user.user_id]);
     res.json(rows);
   } catch (err) {
-    console.error(err);
     res.status(500).send({ result: "Internal Server Error" });
   }
 });
@@ -79,9 +78,8 @@ router.get("/walks", async(req, res) => {
       WHERE Dogs.owner_id=? AND WalkRequests.status='open' OR WalkRequests.status='accepted'`, [req.session.user.user_id]);
     res.json(rows);
   } catch (err) {
-    console.error(err);
     res.status(500).send({ result: "Internal Server Error" });
   }
-})
+});
 
 module.exports = router;
