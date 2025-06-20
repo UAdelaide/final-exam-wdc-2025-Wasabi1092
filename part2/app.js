@@ -16,8 +16,9 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
-app.use('/', router.get("/login", (req, res) {
-  const { username, password } = 
+app.use('/', router.get("/login", (req, res) => {
+  const { username, password } = req.body;
+
 }))
 
 // Export the app instead of listening here
