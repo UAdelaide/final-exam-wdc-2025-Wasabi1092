@@ -55,6 +55,6 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get("/")
+router.get("/dogs")
 
 module.exports = router;
