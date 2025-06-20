@@ -11,7 +11,7 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
 -- Insert dogs into table Dogs;
 INSERT INTO Dogs (owner_id, name, size) VALUES
 ((SELECT user_id FROM Users WHERE username='alice123'), 'Max', 'medium'),
-((SELECT user_id FROM Users WHERE username='alice123'), 'Bella', 'medium'),
+((SELECT user_id FROM Users WHERE username='carol123'), 'Bella', 'small'),
+((SELECT user_id FROM Users WHERE username='alice123'), 'Bobby', 'large'),
 ((SELECT user_id FROM Users WHERE username='alice123'), 'Max', 'medium'),
-((SELECT user_id FROM Users WHERE username='alice123'), 'Max', 'medium'),
-((SELECT user_id FROM Users WHERE username='alice123'), 'Max', 'medium'),
+((SELECT user_id FROM Users WHERE username='alice123'), 'Max', 'small'),
