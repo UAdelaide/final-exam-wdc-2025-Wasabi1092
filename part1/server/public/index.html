@@ -13,14 +13,13 @@
     </div>
     <script>
         const { createApp, ref } = Vue;
-        const app = createApp({
+        createApp({
             data() {
                 return {
                     image: "hello world"
                 }
             }
-        })
-        app.mount("#app");
+        }).mount("#app");
     </script>
 </body>
 </html>
