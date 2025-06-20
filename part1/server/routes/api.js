@@ -15,4 +15,17 @@ router.get('/dogs', async function(req, res) {
   res.send(dogs);
 });
 
+// api/walkrequests/open endpoint
+
+router.get('/walkrequess', async function(req, res) {
+  let db = await mysql2.createConnection({
+    host: 'localhost',
+    database: 'DogWalkService'
+  });
+  const [dogs] = await db.execute(`
+    SELECT Dogs.name as dog_name, Dogs.size, Users.username AS owner_username FROM Dogs JOIN Users ON Dogs.owner_id=Users.user_id
+  `);
+  res.send(dogs);
+});
+
 module.exports = router;
