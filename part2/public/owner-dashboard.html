@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="stylesheets/style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body class="bg-light" @load="loadDogs()">
+<body class="bg-light" onload="loadDogs()">
   <div id="app" class="container py-4">
     <div id="header">
       <h1 class="mb-4 text-primary">Owner Dashboard</h1>
@@ -133,6 +133,23 @@
         };
       }
     }).mount('#app');
+    async function loadDogs() {
+      try {
+        const res = await fetch('/api/users/dogs');
+        obj = await res.json();
+        if (obj.result === undefined) {
+          return;
+        }
+        document.getElementById("dog").innerHTML = "";
+        for (let i=0; i< obj.length; i++) {
+          document.getElementById("dog").innerHTML += `
+            <option value=${obj[i].name}>${obj[i].name}</option>
+          `;
+        }
+      } catch {
+        return;
+      }
+    }
   </script>
   <script src="javascripts/page.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
