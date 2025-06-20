@@ -17,7 +17,7 @@
             let r = Math.floor(Math.random() * 255);
             let g = Math.floor(Math.random() * 255);
             let b = Math.floor(Math.random() * 255);
-            document.getElementById("#app").style.color=
+            document.getElementById("#app").style.color=`rgb(${r}, ${g}, ${b})`;
         }
         fetch ("https://dog.ceo/api/breeds/image/random").then((response) => {
             response.json().then((object)=> {
