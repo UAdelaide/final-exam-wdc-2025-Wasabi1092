@@ -54,6 +54,7 @@
         let obj = await res.json();
         let body = document.getElementById("table-body");
         body.innerHTML = "";
+        const images = await fetch("/api/")
         for (let i =0; i< obj.length; i++) {
           body.appen
         }
