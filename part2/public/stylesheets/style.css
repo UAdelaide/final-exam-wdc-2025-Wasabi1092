@@ -174,5 +174,9 @@ input {
 }
 
 #dogs td {
+    width: 20%;
+}
 
+#dogs td img{
+    width: 100%;
 }
