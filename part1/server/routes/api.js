@@ -35,6 +35,7 @@ router.get('/walkers/summary', async function (req, res) {
     database: 'DogWalkService'
   });
   let payload = [];
+  let sums = [];
   const [walkers] = await db.execute(`
     SELECT * FROM Users WHERE role='walker';
   `);
@@ -45,7 +46,7 @@ router.get('/walkers/summary', async function (req, res) {
       average_rating: null,
       completed_walks: 0
     });
-    
+
   }
   res.send(walkers);
 });
