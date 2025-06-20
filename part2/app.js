@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+var session = require('express-session');
 const db = require ('./models/db');
 require('dotenv').config();
 
