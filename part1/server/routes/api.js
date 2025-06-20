@@ -63,8 +63,10 @@ router.get('/walkers/summary', async function (req, res) {
     GROUP BY Users.username;
   `);
   for (let i=0; i<data.length; i++) {
-    for (let j=0; j<walkers.length; j++){
-      if ()
+    for (let j=0; j<payload.length; j++){
+      if (payload[j].walker_username === data[i].walker_username) {
+        
+      }
     }
   }
   res.send(walkers);
