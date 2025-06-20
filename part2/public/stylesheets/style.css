@@ -182,4 +182,6 @@ input {
     width: 100px;
 }
 
-tr
+tr:nth-child(even) {
+    background-color: #a3a3a3;
+}
