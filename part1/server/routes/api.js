@@ -28,4 +28,7 @@ router.get('/walkrequests/open', async function(req, res) {
   res.send(requests);
 });
 
+// api/walkers/summary endpoint
+
+
 module.exports = router;
