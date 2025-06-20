@@ -55,6 +55,12 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get("/dogs")
+router.get("/dogs", async(req, res) => {
+  try {
+    const [rows] = await db.query(`
+      
+    `)
+  }
+})
 
 module.exports = router;
