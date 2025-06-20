@@ -15,13 +15,15 @@
         const { createApp, ref } = Vue;
 
         let url = (async() => {
-            let response = await fetch("https://dog.ceo/api/breeds/image/random")
+            let response = await fetch("https://dog.ceo/api/breeds/image/random");
+            let object = response.json();
+            return object.message;
         })()
 
         createApp({
             data() {
                 return {
-                    image: ref("hello world")
+                    image: ref(url)
                 }
             }
         }).mount("#app");
