@@ -62,6 +62,7 @@ router.get("/dogs", async(req, res) => {
     `, req.session.user_id);
     res.send(rows);
   } catch (err) {
+    console.error(err);
     res.status(500).send({ result: "Internal Server Error" });
   }
 });
