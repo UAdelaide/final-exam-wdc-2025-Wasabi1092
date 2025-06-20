@@ -3,6 +3,13 @@ const router = express.Router();
 const db = require('../models/db');
 
 
+router.get('/api/dogs', async function(req, res) {
+  const [dogs] = await db.execute(`
+    SELECT Dogs.name as dog_name, Dogs.size, Users.username AS owner_username FROM Dogs JOIN Users ON Dogs.owner_id=Users.user_id
+  `);
+  res.send(dogs);
+});
+
 router.post("/login", async (req, res) => {
   const [rows] = await db.query("SELECT * FROM Users WHERE username=?", [req.body.user]);
   if (rows.length === 0) {
