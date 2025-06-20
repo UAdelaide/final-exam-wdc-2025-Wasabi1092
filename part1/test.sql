@@ -30,4 +30,4 @@ INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALU
 (2, (SELECT user_id from Users WHERE username='bobwalker'), (SELECT user_id from Users WHERE username='carol123'), 1, "N/A"),
 (3, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='ethan123'), 3, "N/A"),
 (4, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='alice123'), 5, "N/A"),
-(5, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='carol123'), 2, "N/A"),
+(5, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='carol123'), 2, "N/A");
