@@ -61,7 +61,7 @@ router.get('/walkers/summary', async function (req, res) {
     for (let j=0; j<payload.length; j++){
       if (payload[j].walker_username === data[i].walker_username) {
         payload[j].total_ratings = data[i].total_ratings;
-        payload[j].average_rating = data[i].average_rating;
+        payload[j].average_rating = +data[i].average_rating;
         payload[j].completed_walks = data[i].completed_walks;
         break;
       }
