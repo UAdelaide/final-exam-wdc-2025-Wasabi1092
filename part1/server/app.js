@@ -123,12 +123,10 @@ app.use(express.static(path.join(__dirname, 'public')));
     [rows] = await db.execute("SELECT COUNT(*) as count from WalkRatings");
     if (rows[0].count === 0) {
       await db.execute(`
-        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
-        ((SELECT dog_id FROM Dogs WHERE name='Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
-        ((SELECT dog_id FROM Dogs WHERE name='Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
-        ((SELECT dog_id FROM Dogs WHERE name='Bobby'), '2025-06-12 08:00:00', 15, 'Glenelg Beach', 'completed'),
-        ((SELECT dog_id FROM Dogs WHERE name='Richie'), '2025-06-18 08:30:00', 60, 'Parklands', 'completed'),
-        ((SELECT dog_id FROM Dogs WHERE name='Monty'), '2025-06-20 10:30:00', 30, 'Beachside Ave', 'completed');
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
+        (3, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='ethan123'), 3, "N/A"),
+        (4, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='alice123'), 5, "N/A"),
+        (5, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='carol123'), 2, "N/A");
       `);
     }
 
