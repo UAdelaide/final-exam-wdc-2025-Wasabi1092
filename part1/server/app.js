@@ -23,8 +23,10 @@ app.use(express.static(path.join(__dirname, 'public')));
     await con.end();
     const db = await mysql2.createConnection({
       host: 'localhost',
-      database: ''
-    })
+      database: 'DogWalkService'
+    });
+
+    await db.execute()
   } catch (err) {
     // handle error
   }
