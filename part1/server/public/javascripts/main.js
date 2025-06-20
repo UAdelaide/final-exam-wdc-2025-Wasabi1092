@@ -11,7 +11,7 @@ console.log(url);
 const app = createApp({
   setup() {
     return {
-      image: object.message
+      image: url
     };
   }
 });
