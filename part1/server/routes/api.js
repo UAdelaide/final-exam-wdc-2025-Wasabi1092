@@ -39,7 +39,9 @@ router.get('/walkers/summary', async function (req, res) {
     SELECT * FROM Users WHERE role='walker';
   `);
   for (let i=0; i< walkers.length; i++) {
-    
+    payload.push({
+      "walker_username": ""
+    })
   }
   res.send(walkers);
 });
