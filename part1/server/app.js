@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
     });
 
     await db.execute(`
-      CREATE TABLE Users (
+      CREATE TABLE IF NOT EXISTS Users (
         user_id INT AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(50) UNIQUE NOT NULL,
         email VARCHAR(100) UNIQUE NOT NULL,
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         role ENUM('owner', 'walker') NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
-    `)
+    `);
   } catch (err) {
     // handle error
   }
