@@ -172,6 +172,9 @@ input {
 #dogs {
     width: auto;
 }
+tr {
+    border-bottom: 1px solid #aaaaaa;
+}
 
 #dogs td, #dogs th {
     width: auto;
