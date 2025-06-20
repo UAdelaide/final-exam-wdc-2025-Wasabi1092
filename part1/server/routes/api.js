@@ -35,7 +35,6 @@ router.get('/walkers/summary', async function (req, res) {
     database: 'DogWalkService'
   });
   let payload = [];
-  let sums = [];
   const [walkers] = await db.execute(`
     SELECT * FROM Users WHERE role='walker';
   `);
@@ -45,10 +44,6 @@ router.get('/walkers/summary', async function (req, res) {
       total_ratings: 0,
       average_rating: null,
       completed_walks: 0
-    });
-    sums.push({
-      walker: walkers[i].username,
-      rating_sum: 0
     });
   }
   const [data] = await db.execute(`
@@ -65,11 +60,11 @@ router.get('/walkers/summary', async function (req, res) {
   for (let i=0; i<data.length; i++) {
     for (let j=0; j<payload.length; j++){
       if (payload[j].walker_username === data[i].walker_username) {
-        
+        payload[j].total_ratings =
       }
     }
   }
-  res.send(walkers);
+  res.send(payload);
 });
 
 module.exports = router;
