@@ -38,7 +38,7 @@ router.get('/walkers/summary', async function (req, res) {
   const [walkers] = await db.execute(`
     SELECT * FROM Users WHERE role='walker';
   `);
-  // must handle 
+  // must handle walkers that don't have reviews yet
   for (let i=0; i< walkers.length; i++) {
     payload.push({
       walker_username: walkers[i].username,
