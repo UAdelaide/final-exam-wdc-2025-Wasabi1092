@@ -15,8 +15,9 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/logout", (req, res) => {
-  req.session = ""
-})
+router.post("/logout", (req, res) => {
+  delete req.session.user;
+  res.status(200).send();
+});
 
 module.exports = router;
