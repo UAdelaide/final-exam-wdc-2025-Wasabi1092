@@ -192,7 +192,7 @@ function login(){
                 document.getElementById("login-err").style.display='block';
             }
             if (res.user_type === "owner") {
-
+                
             }
         }
     };
