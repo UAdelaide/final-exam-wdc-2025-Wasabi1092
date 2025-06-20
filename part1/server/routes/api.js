@@ -47,11 +47,11 @@ router.get('/walkers/summary', async function (req, res) {
       completed_walks: 0
     });
     sums.push({
-      walker: walker[i].username,
+      walker: walkers[i].username,
       rating_sum: 0
     });
-
   }
+  
   res.send(walkers);
 });
 
