@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
 
 router.get("/dogs", async(req, res) => {
   try {
-    const [rows] = await db.query(`
+    const [rows] = await db.execute(`
       SELECT name FROM Dogs WHERE owner_id=?
     `, req.session.user_id);
     res.send(rows);
