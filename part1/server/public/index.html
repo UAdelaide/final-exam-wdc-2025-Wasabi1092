@@ -15,7 +15,7 @@
 
 <body>
     <div id="app">
-        <p>dog of the day</p>
+        <p id="text">dog of the day</p>
         <img v-bind:src="image" alt="" width="100px" style="position: absolute; left: 100%">
     </div>
     <script>
@@ -25,6 +25,7 @@
             let g = Math.floor(Math.random() * 255);
             let b = Math.floor(Math.random() * 255);
             document.getElementById("app").style.backgroundColor=`rgb(${r}, ${g}, ${b})`;
+            document.getElementById("text").style.backgroundColor=`rgb(${Math.ma}, ${g}, ${b})`;
         }
         fetch ("https://dog.ceo/api/breeds/image/random").then((response) => {
             response.json().then((object)=> {
