@@ -52,9 +52,10 @@
       try {
         const res = await fetch("/api/dogs");
         let obj = await res.json();
-        document.getElementById("table-body");
+        let body = document.getElementById("table-body");
+        body.innerHTML = "";
         for (let i =0; i< obj.length; i++) {
-
+          body.appen
         }
       } catch (err) {
         return;
