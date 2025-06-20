@@ -5,7 +5,7 @@ createApp({
     let response = await fetch("https://dog.ceo/api/breeds/image/random")
     let object = await response.json();
     return {
-      image: object
+      image: object;
     }
   }
 }).mount('#app');
