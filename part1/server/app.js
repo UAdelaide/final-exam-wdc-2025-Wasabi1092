@@ -15,7 +15,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 (async () => {
-  
+  try {
+    const db = mysql2.createConnection({
+      host: "localhost",
+      database: ""
+    })
+  }
 });
 
 app.use('/api', apiRouter);
