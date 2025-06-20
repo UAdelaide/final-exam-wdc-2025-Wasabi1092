@@ -4,7 +4,17 @@
     <title>Express</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="javascripts/main.js" defer></script>
+    <script src="javascripts/main.js" defer>
+        const app = createApp({
+            data() {
+                return {
+                image: "hello"
+                };
+            }
+        });
+
+            app.mount('#app');
+    </script>
 </head>
 
 <body>
