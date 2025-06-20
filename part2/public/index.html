@@ -24,7 +24,10 @@
 
     <table id="dogs">
       <thead id="table-head">
-
+        <tr>
+          <th>Dog ID</th>
+          <th></th>
+        </tr>
       </thead>
       <tbody id="table-body">
 
@@ -47,7 +50,7 @@
         const res = await fetch("/api/dogs");
         let obj = await res.json();
         for (let i =0; i< obj.length; i++) {
-          
+
         }
       } catch (err) {
         return;
