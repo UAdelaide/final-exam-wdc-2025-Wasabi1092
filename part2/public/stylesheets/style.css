@@ -181,10 +181,13 @@ input {
 #dogs td img{
     width: 100px;
 }
+thead tr {
+    background-color: #f0f0f0;
+}
 
-tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
     background-color: #dfdfdf;
 }
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: #f0f0f0;
 }
