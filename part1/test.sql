@@ -26,3 +26,6 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 
 -- Insert reviews into table WalkRatings;
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
+(
+  
+)
