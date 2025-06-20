@@ -5,7 +5,7 @@ const db = require('../models/db');
 
 router.get('/api/dogs', async function(req, res) {
   const [dogs] = await db.execute(`
-    SELECT Dogs.Dogs.name as dog_name, Dogs.size, Users.username AS owner_username FROM Dogs JOIN Users ON Dogs.owner_id=Users.user_id
+    SELECT Dogs.dog_id as dog_id, Dogs.name as dog_name, Dogs.size, Users.user_id AS user_id FROM Dogs JOIN Users ON Dogs.owner_id=Users.user_id
   `);
   res.send(dogs);
 });
