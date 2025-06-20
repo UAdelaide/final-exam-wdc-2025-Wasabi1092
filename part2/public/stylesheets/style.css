@@ -170,12 +170,12 @@ input {
 }
 
 #dogs {
-    width: 25vw;
+    width: auto;
 }
 
 #dogs td {
     width: auto;
-    padding-right: 1em;
+    padding-right: 3em;
 }
 
 #dogs td img{
