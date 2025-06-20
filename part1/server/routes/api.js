@@ -10,7 +10,7 @@ router.get('/dogs', async function(req, res) {
     database: 'DogWalkService'
   });
   const [dogs] = db.execute(`
-    SELECT dog_name, size, Users.
+    SELECT dog_name, size, Users.username 
   `);
 });
 
