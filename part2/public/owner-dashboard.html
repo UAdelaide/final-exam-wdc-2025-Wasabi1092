@@ -84,23 +84,6 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        async function loadDogs() {
-          try {
-            const res = await fetch('/api/users/dogs');
-            obj = await res.json();
-            if (obj.result === undefined) {
-              return;
-            }
-            document.getElementById("dog").innerHTML = "";
-            for (let i=0; i< obj.length; i++) {
-              document.getElementById("dog").innerHTML += `
-                <option value=${obj[i].name}>${obj[i].name}</option>
-              `;
-            }
-          } catch {
-            return;
-          }
-        }
 
         async function loadWalks() {
           try {
@@ -147,7 +130,6 @@
           message,
           error,
           submitWalkRequest,
-          loadDogs
         };
       }
     }).mount('#app');
