@@ -52,6 +52,7 @@
       try {
         const res = await fetch("/api/dogs");
         let obj = await res.json();
+        document.getElementById("table-body");
         for (let i =0; i< obj.length; i++) {
 
         }
