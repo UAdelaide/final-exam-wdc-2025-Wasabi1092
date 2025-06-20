@@ -9,9 +9,9 @@ router.get('/dogs', async function(req, res) {
     host: 'localhost',
     database: 'DogWalkService'
   });
-  const [dogs] = db.execute(
-    
-  )
+  const [dogs] = db.execute(`
+    SELECT do
+  `);
 });
 
 module.exports = router;
