@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         FOREIGN KEY (owner_id) REFERENCES Users(user_id)
       );
     `);
-    await db.execute
+    await db.execute(`
       CREATE TABLE IF NOT EXISTS WalkRequests (
         request_id INT AUTO_INCREMENT PRIMARY KEY,
         dog_id INT NOT NULL,
@@ -56,7 +56,8 @@ app.use(express.static(path.join(__dirname, 'public')));
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
       );
-
+    `);
+    await db.execute(`
       CREATE TABLE IF NOT EXISTS WalkApplications (
         application_id INT AUTO_INCREMENT PRIMARY KEY,
         request_id INT NOT NULL,
