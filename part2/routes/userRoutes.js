@@ -66,4 +66,6 @@ router.get("/dogs", async(req, res) => {
   }
 });
 
+router.get("/walks")
+
 module.exports = router;
