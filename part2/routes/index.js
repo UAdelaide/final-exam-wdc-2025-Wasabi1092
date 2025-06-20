@@ -3,9 +3,8 @@ const router = express.Router();
 const db = require('../models/db');
 
 
-router.post("/login", (req, res) => {
-  console.log(req.body);
-  const [rows] = db.execute("SELECT * FROM Users WHERE username=?", [req.body.user]);
+router.post("/login", async (req, res) => {
+  const [rows] = await db.execute("SELECT * FROM Users WHERE username=?", [req.body.user]);
   if (rows.length === 0) {
     res.status(200).json({ result: 'failure' });
   } else if (rows[0].password_hash === req.body.pass) {
