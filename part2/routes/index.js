@@ -1,4 +1,5 @@
-
+const express = require('express');
+const router = express.Router();
 
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
@@ -11,3 +12,5 @@ router.post("/login", (req, res) => {
     res.status(200).json({ result: 'failure' });
   }
 })
+
+module.exports = router;
