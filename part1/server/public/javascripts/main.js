@@ -8,7 +8,7 @@ let url = (async() => {
 
 console.log(url);
 const app = createApp({
-  setup() {
+  data() {
     return {
       image: url
     };
