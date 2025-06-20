@@ -7,3 +7,6 @@ INSERT INTO Users (username, email, password_hash, role) VALUES
 ('carol123', 'carol@example.com', 'hashed789', 'owner'),
 ('davidwalker', 'david@example.com', 'hashed012', 'walker'),
 ('ethan123', 'ethan@example.com', 'hashed345', 'owner');
+
+-- Insert dogs into table Dogs;
+insert into Dogs (owner_id, name, size) values ((select user_id from Users where username='alice123'), 'Max', 'medium');
