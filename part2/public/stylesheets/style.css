@@ -160,3 +160,6 @@ input {
     border-radius: 5px;
     border: 1px solid #aaaaaa;
 }
+#login-form {
+    margin-top: 2em;
+}
