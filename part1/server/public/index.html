@@ -15,7 +15,9 @@
         const { createApp, ref } = Vue;
         function changeColor() {
             let r = Math.floor(Math.random() * 255);
-            document.getElementById("#app")
+            let g = Math.floor(Math.random() * 255);
+            let b = Math.floor(Math.random() * 255);
+            document.getElementById("#app").style.color=
         }
         fetch ("https://dog.ceo/api/breeds/image/random").then((response) => {
             response.json().then((object)=> {
