@@ -21,17 +21,11 @@
             response.json().then((object)=> {
                 result.url = object.message;
                 console.log(result.url);
+                czzz
             })
         })
-        console.log(result.url)
 
-        createApp({
-            data() {
-                return {
-                    image: ref(result.url)
-                }
-            }
-        }).mount("#app");
+
     </script>
 </body>
 </html>
