@@ -4,7 +4,7 @@ const db = require('../models/db');
 
 
 router.post("/login", (req, res) => {
-  const { username, password } = req.body;
+  const { user, password } = req.body;
   const [rows] = db.execute("SELECT * FROM Users WHERE username=?", [username]);
   if (rows.length === 0) {
     res.status(200).json({ result: 'failure' });
