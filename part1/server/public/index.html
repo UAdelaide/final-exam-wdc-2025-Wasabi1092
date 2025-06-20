@@ -12,7 +12,15 @@
         <img v-bind:src="image" alt="">
     </div>
     <script>
-        const { createApp, ref } = Vue
+        const { createApp, ref } = Vue;
+        const app = createApp({
+            data() {
+                return {
+                    image: "hello world"
+                }
+            }
+        })
+        app.mount("#app");
     </script>
 </body>
 </html>
