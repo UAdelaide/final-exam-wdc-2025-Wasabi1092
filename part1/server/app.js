@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mysql2 = require('mysql2');
+const mysql2 = require('mysql2/promise');
 
 var apiRouter = require('./routes/api');
 
@@ -16,9 +16,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 (async () => {
   try {
-    const db = mysql2.createConnection({
+    const db = await mysql2.createConnection({
       host: "localhost"
     });
+
   } catch (err) {
     // handle error
   }
