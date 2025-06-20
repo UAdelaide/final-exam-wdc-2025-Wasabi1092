@@ -3,7 +3,7 @@ var router = express.Router();
 var mysql2 = require("mysql2/promise");
 
 
-/* GET home page. */
+// api/dogs endpoint
 router.get('/dogs', async function(req, res) {
   let db = await mysql2.createConnection({
     host: 'localhost',
