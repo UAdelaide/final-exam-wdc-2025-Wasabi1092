@@ -15,8 +15,8 @@ app.use(session({
   secret: "asdkjlakldfhhjkasdfhuiew89p231",
   resave: false,
   saveUninitialized: true,
-  cookie: {secure: false }
-}))
+  cookie: { secure: false }
+}));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
