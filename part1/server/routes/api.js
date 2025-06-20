@@ -38,7 +38,9 @@ router.get('/walkers/summary', async function (req, res) {
   const [walkers] = await db.execute(`
     SELECT * FROM Users WHERE role='walker';
   `);
-  for
+  for (let i=0; i< walkers.length; i++) {
+    
+  }
   res.send(walkers);
 });
 
