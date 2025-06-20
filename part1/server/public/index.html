@@ -16,7 +16,7 @@
 
         let url = (async() => {
             let response = await fetch("https://dog.ceo/api/breeds/image/random");
-            let object = response.json();
+            let object = await response.json();
             return object.message;
         })()
 
