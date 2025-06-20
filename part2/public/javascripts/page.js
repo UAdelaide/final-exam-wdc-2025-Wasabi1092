@@ -187,7 +187,10 @@ function login(){
     // Define function to run on response
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            if (user_type === "owner")
+            let res = JSON.parse(this.responseText);
+            if (res.user_type === "owner") {
+
+            }
         }
     };
 
