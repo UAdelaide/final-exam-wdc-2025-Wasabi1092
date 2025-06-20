@@ -71,6 +71,7 @@ router.get("/walks", async(req, res) => {
       SELECT
       WalkRequests.*,
       Dogs.name as dog_name,
+      Dogs.size as 
       Users.username as owner_name
       FROM WalkRequests
       JOIN Dogs ON Dogs.dog_id=WalkRequests.dog_id
