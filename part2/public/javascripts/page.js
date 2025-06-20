@@ -193,7 +193,7 @@ function login(){
             }
             if (res.user_type === "owner") {
                 window.location.href = "owner-dashboard.html";
-            } else {
+            } else if (res.user_type === "walker") {
                 window.location.href = "walker-dashboard.html";
             }
         }
