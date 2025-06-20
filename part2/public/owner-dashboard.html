@@ -137,7 +137,7 @@
       try {
         const res = await fetch('/api/users/dogs');
         obj = await res.json();
-        if (obj.result === undefined) {
+        if (obj.result !== undefined) {
           return;
         }
         document.getElementById("dog").innerHTML = "";
