@@ -22,16 +22,12 @@ app.use('/', router.post("/login", (req, res) => {
   const [rows] = db.execute("SELECT * FROM Users WHERE username=?", [username]);
   if (rows.length === 0) {
     res.status(200).json({ result: 'failure' });
+  } else if (rows[0].password_hash === password) {
+    res.status(200).json({ result: 'success', user_type: rows[0].role });
   } else {
-    // normally you would use whatever hashing alg to check this,
-    // but since the password is unhashed, just do this
-    if (rows[0].password_hash === password) {
-      res.status(200).json({ result: 'success', user_type: rows[0].role });
-    } else {
-      res.status(200).json({ result: 'failure' });
-    }
+    res.status(200).json({ result: 'failure' });
   }
-}))
+}));
 
 // Export the app instead of listening here
 module.exports = app;
