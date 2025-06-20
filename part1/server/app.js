@@ -18,8 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   try {
     const db = mysql2.createConnection({
       host: "localhost",
-      database: ""
-    })
+    });
   }
 });
 
