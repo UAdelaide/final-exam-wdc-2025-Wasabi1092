@@ -62,7 +62,8 @@ router.get('/walkers/summary', async function (req, res) {
       if (payload[j].walker_username === data[i].walker_username) {
         payload[j].total_ratings = data[i].total_ratings;
         payload[j].average_rating = data[i].average_rating;
-        payload[]
+        payload[j].completed_walks = data[i].completed_walks;
+        break;
       }
     }
   }
