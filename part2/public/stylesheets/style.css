@@ -185,3 +185,6 @@ input {
 tr:nth-child(even) {
     background-color: #a3a3a3;
 }
+tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
