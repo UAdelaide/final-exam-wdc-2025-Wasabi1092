@@ -59,11 +59,11 @@
         for (let i =0; i< obj.length; i++) {
           body.innerHTML += `
             <tr>
-              <td>${dog_id}</td>
-              <td>${dog_name}</td>
-              <td>${size}</td>
-              <td>${owner_id}</td>
-              <td><img src="${imag}" alt="dog ${dog_id} image"></td>
+              <td>${obj[i].dog_id}</td>
+              <td>${obj[i].dog_name}</td>
+              <td>${obj[i].size}</td>
+              <td>${obj[i].owner_id}</td>
+              <td><img src="${image_obj[i]}" alt="dog ${obj[i].dog_id} image"></td>
             </tr>
           `;
         }
