@@ -25,7 +25,7 @@
             let g = Math.floor(Math.random() * 255);
             let b = Math.floor(Math.random() * 255);
             document.getElementById("app").style.backgroundColor=`rgb(${r}, ${g}, ${b})`;
-            document.getElementById("text").style.backgroundColor=`rgb(${Math.max(r-1, 0)}, ${Math.max(g-1, 0)}, ${Math.max(b-1, 0)})`;
+            document.getElementById("text").style.color=`rgb(${Math.max(r-1, 0)}, ${Math.max(g-1, 0)}, ${Math.max(b-1, 0)})`;
         }
         fetch ("https://dog.ceo/api/breeds/image/random").then((response) => {
             response.json().then((object)=> {
