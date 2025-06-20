@@ -38,5 +38,5 @@ COUNT(CASE WHEN WalkRequests.status='completed' THEN 1 END) AS completed_walks
 FROM Users
 JOIN WalkRatings ON WalkRatings.walker_id=Users.user_id
 JOIN WalkRequests ON WalkRequests.request_id=WalkRatings.request_id
-GROUP BY Users.username
-WHERE Users.role='walker';
+WHERE Users.role='walker'
+GROUP BY Users.username;
