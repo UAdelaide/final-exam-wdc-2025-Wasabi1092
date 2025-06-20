@@ -18,13 +18,15 @@
             url: ""
         }
         fetch ("https://dog.ceo/api/breeds/image/random").then((response) => {
-            res
+            response.json().then((object)=> {
+                result.url = object.message;
+            })
         })
 
         createApp({
             data() {
                 return {
-                    image: ref(url)
+                    image: ref(result.url)
                 }
             }
         }).mount("#app");
