@@ -25,3 +25,4 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 ((SELECT dog_id FROM Dogs WHERE name='Monty'), '2025-06-20 10:30:00', 30, 'Beachside Ave', 'open');
 
 -- Insert reviews into table WalkRatings;
+INSERT INTO WalkRatings (request_id, walker_id)
