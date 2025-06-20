@@ -22,10 +22,10 @@ router.get('/walkrequests/open', async function(req, res) {
     host: 'localhost',
     database: 'DogWalkService'
   });
-  const [dogs] = await db.execute(`
-    SELECT WalkRequests.request_id, Dogs.name as dog_name, WalkRequests.requested_time, WalkRequests.duration_minutes, WalkRequests.location, Users.username AS owner_username FROM Dogs JOIN Users ON Dogs.owner_id=Users.user_id JOIN WalkRequests ON Dogs.dog_id=WalkRequests.dog_id WHERE 
+  const [requests] = await db.execute(`
+    SELECT WalkRequests.request_id, Dogs.name as dog_name, WalkRequests.requested_time, WalkRequests.duration_minutes, WalkRequests.location, Users.username AS owner_username FROM Dogs JOIN Users ON Dogs.owner_id=Users.user_id JOIN WalkRequests ON Dogs.dog_id=WalkRequests.dog_id WHERE status='open'
   `);
-  res.send(dogs);
+  res.send(requests);
 });
 
 module.exports = router;
