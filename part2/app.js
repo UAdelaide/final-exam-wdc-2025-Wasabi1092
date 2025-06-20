@@ -21,7 +21,9 @@ app.use('/', router.post("/login", (req, res) => {
   const { username, password } = req.body;
   const [rows] = db.execute("SELECT * FROM Users WHERE username=?", [username]);
   if (rows.length === 0) {
-    res.status(200).send()
+    res.status(200).json({ result: 'failure' });
+  } else {
+    if (rows[0].)
   }
 }))
 
