@@ -171,11 +171,11 @@ input {
 
 #dogs {
     width: 25vw;
-    background
 }
 
 #dogs td {
     width: auto;
+    padding-right: 1em;
 }
 
 #dogs td img{
