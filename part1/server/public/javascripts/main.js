@@ -1,10 +1,11 @@
 import { createApp, ref } from 'vue';
 
 
-(async())
-let response = await fetch("https://dog.ceo/api/breeds/image/random");
-let object = await response.json();
-console.log(object.message);
+let url = (async() => {
+  let response = await fetch("https://dog.ceo/api/breeds/image/random");
+  let object = await response.json();
+})()
+
 
 const app = createApp({
   setup() {
