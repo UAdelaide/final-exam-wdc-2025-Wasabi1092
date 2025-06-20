@@ -31,7 +31,8 @@ router.get('/walkrequests/open', async function(req, res) {
 // api/walkers/summary endpoint
 router.get('/walkers/summary', async function (req, res) {
   let db = await mysql2.createConnection({
-    
+    host: 'localhost',
+    database: 'DogWalkService',
   })
 })
 
