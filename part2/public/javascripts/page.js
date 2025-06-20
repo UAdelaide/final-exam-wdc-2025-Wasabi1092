@@ -189,7 +189,7 @@ function login(){
         if (this.readyState === 4 && this.status === 200) {
             let res = JSON.parse(this.responseText);
             if (res.result === "failure") {
-                
+                document.getElementById("")
             }
             if (res.user_type === "owner") {
 
