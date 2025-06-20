@@ -20,8 +20,10 @@
         fetch ("https://dog.ceo/api/breeds/image/random").then((response) => {
             response.json().then((object)=> {
                 result.url = object.message;
+                console.log(result.url);
             })
         })
+        console.log(result.url)
 
         createApp({
             data() {
