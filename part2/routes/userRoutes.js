@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
 router.get("/dogs", async(req, res) => {
   try {
     const [rows] = await db.execute(`SELECT name FROM Dogs WHERE owner_id=?`, [req.session.user.user_id]);
-    res.send(rows);
+    res.json(rows);
   } catch (err) {
     console.error(err);
     res.status(500).send({ result: "Internal Server Error" });
