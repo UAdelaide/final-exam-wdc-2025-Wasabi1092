@@ -44,7 +44,9 @@
     }).mount('#app');
     async function loadAllDogs() {
       try {
-        
+        const res = await fetch("/api/dogs");
+        let obj = await res.json();
+        for ()
       } catch (err) {
         return;
       }
