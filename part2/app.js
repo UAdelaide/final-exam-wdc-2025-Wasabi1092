@@ -17,7 +17,7 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 app.use('/', router.get("/login", (req, res) {
-  
+  const { username, password } = 
 }))
 
 // Export the app instead of listening here
