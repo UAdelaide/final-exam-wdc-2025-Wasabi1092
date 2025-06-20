@@ -40,7 +40,9 @@ router.get('/walkers/summary', async function (req, res) {
   `);
   for (let i=0; i< walkers.length; i++) {
     payload.push({
-      "walker_username": ""
+      walker_username: walkers[i].username,
+      total_ratings: 0,
+      
     })
   }
   res.send(walkers);
