@@ -16,12 +16,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 (async () => {
   try {
-    const db = await mysql2.createConnection({
+    const con = await mysql2.createConnection({
       host: "localhost"
     });
-    await db.query("CREATE DATABASE IF NOT EXISTS DogWalkService");
-    await db.end();
-    
+    await con.query("CREATE DATABASE IF NOT EXISTS DogWalkService");
+    await con.end();
+
   } catch (err) {
     // handle error
   }
