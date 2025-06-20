@@ -62,7 +62,11 @@ router.get('/walkers/summary', async function (req, res) {
     JOIN WalkRequests ON WalkRequests.request_id=WalkRatings.request_id
     GROUP BY Users.username;
   `);
-  
+  for (let i=0; i<data.length; i++) {
+    for (let j=0; j<walkers.length; j++){
+      if ()
+    }
+  }
   res.send(walkers);
 });
 
