@@ -67,7 +67,14 @@ router.get("/dogs", async(req, res) => {
 });
 
 router.get("/walks", async(req, res) => {
-  
+  try {
+    const [rows] = await db.execute(`SELECT name FROM Dogs WHERE owner_id=?`, [req.session.user.user_id]);
+    console.log(rows);
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ result: "Internal Server Error" });
+  }
 })
 
 module.exports = router;
