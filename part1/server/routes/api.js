@@ -29,6 +29,6 @@ router.get('/walkrequests/open', async function(req, res) {
 });
 
 // api/walkers/summary endpoint
-
+router.get('/walkers/')
 
 module.exports = router;
