@@ -12,7 +12,10 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(session({
-  secret: "asdkjlakldfhhjkasdfhuiew89p231"
+  secret: "asdkjlakldfhhjkasdfhuiew89p231",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {secure: false }
 }))
 
 // Routes
