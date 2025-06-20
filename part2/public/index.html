@@ -57,7 +57,9 @@
         const images = await fetch(`https://dog.ceo/api/breeds/image/random/${obj.length}`);
         let image_obj = await images.json();
         for (let i =0; i< obj.length; i++) {
-          body.appen
+          body.innerHTML += `
+            
+          `;
         }
       } catch (err) {
         return;
