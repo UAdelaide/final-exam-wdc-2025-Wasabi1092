@@ -23,7 +23,7 @@ app.use('/', router.post("/login", (req, res) => {
   if (rows.length === 0) {
     res.status(200).json({ result: 'failure' });
   } else {
-    if (rows[0].)
+    if (rows[0].password_hash === )
   }
 }))
 
