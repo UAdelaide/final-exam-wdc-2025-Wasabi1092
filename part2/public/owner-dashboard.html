@@ -94,11 +94,12 @@
             document.getElementById("dog").innerHTML = "";
             for (let i=0; i< obj.length; i++) {
               document.getElementById("dog").innerHTML += `
-                <option value=${obj[i].}></option>
+                <option value=${obj[i].name}>${obj[i].name}</option>
               `;
             }
           }
         }
+        
         async function loadWalks() {
           try {
             const res = await fetch('/api/walks');
