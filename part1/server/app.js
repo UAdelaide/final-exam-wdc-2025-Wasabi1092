@@ -120,6 +120,18 @@ app.use(express.static(path.join(__dirname, 'public')));
       `);
     }
 
+    [rows] = await db.execute("SELECT COUNT(*) as count from WalkRatings");
+    if (rows[0].count === 0) {
+      await db.execute(`
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+        ((SELECT dog_id FROM Dogs WHERE name='Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name='Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+        ((SELECT dog_id FROM Dogs WHERE name='Bobby'), '2025-06-12 08:00:00', 15, 'Glenelg Beach', 'completed'),
+        ((SELECT dog_id FROM Dogs WHERE name='Richie'), '2025-06-18 08:30:00', 60, 'Parklands', 'completed'),
+        ((SELECT dog_id FROM Dogs WHERE name='Monty'), '2025-06-20 10:30:00', 30, 'Beachside Ave', 'completed');
+      `);
+    }
+
   } catch (err) {
     console.error(err);
   }
