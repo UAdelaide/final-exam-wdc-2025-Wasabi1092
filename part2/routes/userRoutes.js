@@ -75,7 +75,7 @@ router.get("/walks", async(req, res) => {
       FROM WalkRequests
       JOIN Dogs ON Dogs.dog_id=WalkRequests.dog_id
       JOIN Users ON Dogs.owner_id=Users.user_id
-      WHERE owner_id=? AND `, [req.session.user.user_id]);
+      WHERE owner_id=? AND WalkRequests.status='open'`, [req.session.user.user_id]);
     res.json(rows);
   } catch (err) {
     console.error(err);
