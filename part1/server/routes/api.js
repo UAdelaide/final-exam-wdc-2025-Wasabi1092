@@ -9,7 +9,7 @@ router.get('/dogs', async function(req, res) {
     host: 'localhost',
     database: 'DogWalkService'
   });
-  if 
+  const [dogs] 
 });
 
 module.exports = router;
