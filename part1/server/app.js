@@ -80,7 +80,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
       );
     `);
-    const [rows] = await db.execute()
+    const [rows] = await db.execute("SELECT COUNT(*) as count from Users")
 
 
   } catch (err) {
