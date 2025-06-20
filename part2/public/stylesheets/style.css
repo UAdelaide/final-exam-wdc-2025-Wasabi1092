@@ -157,5 +157,6 @@ section {
 
 input[type="text"] {
     margin-bottom: 10px;
-    
+    border: none;
+    border-radius: 5px;
 }
