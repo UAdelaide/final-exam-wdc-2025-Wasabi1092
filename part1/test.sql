@@ -31,3 +31,6 @@ INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALU
 (3, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='ethan123'), 3, "N/A"),
 (4, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='alice123'), 5, "N/A"),
 (5, (SELECT user_id from Users WHERE username='davidwalker'), (SELECT user_id from Users WHERE username='carol123'), 2, "N/A");
+
+
+SELECT Users.username AS walker_username, COUNT(WalkRatings.walker_id) AS total_ratings, AVG(WalkRatings.rating) AS average_rating, (SELECT COUNT(*) AS completed_walks FROM WalkRequests GROUP BY status WHERE status='completed') FROM WalkRatings JOIN Users ON WalkRatings.walker_id=Users.user_id JOIN WalkRequests ON WalkRequests.request_id=WalkRatings.request_id GROUP BY Users.username;
