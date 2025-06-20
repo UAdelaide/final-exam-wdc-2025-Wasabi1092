@@ -192,7 +192,9 @@ function login(){
                 document.getElementById("login-err").style.display='block';
             }
             if (res.user_type === "owner") {
-                window.location.href = "owner-dashboard.html"
+                window.location.href = "owner-dashboard.html";
+            } else {
+                window.location.href = "walker-dashboard.html";
             }
         }
     };
