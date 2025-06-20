@@ -19,7 +19,8 @@ app.use('/api/users', userRoutes);
 
 app.use('/', router.post("/login", (req, res) => {
   const { username, password } = req.body;
-  const [rows] = db.execute("SELECT * FROM Users WHERE username=?");
+  const [rows] = db.execute("SELECT * FROM Users WHERE username=?", [username]);
+  
 }))
 
 // Export the app instead of listening here
