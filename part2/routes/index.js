@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../models/db');
+
 
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
