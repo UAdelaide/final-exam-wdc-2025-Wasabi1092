@@ -2,6 +2,6 @@ import { createApp, ref } from 'vue';
 
 createApp({
   setup() {
-    fetch
+    fetch("https://dog.ceo/api/breeds/image/random")
   }
 }).mount('#app');
