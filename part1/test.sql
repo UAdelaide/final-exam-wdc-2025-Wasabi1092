@@ -37,4 +37,5 @@ SELECT
 Users.username AS walker_username,
 COUNT(WalkRatings.walker_id) AS total_ratings,
 AVG(WalkRatings.rating) AS average_rating,
-(SELECT COUNT(*) AS completed_walks FROM WalkRequests GROUP BY status WHERE status='completed') FROM WalkRatings JOIN Users ON WalkRatings.walker_id=Users.user_id JOIN WalkRequests ON WalkRequests.request_id=WalkRatings.request_id GROUP BY Users.username;
+
+FROM WalkRatings JOIN Users ON WalkRatings.walker_id=Users.user_id JOIN WalkRequests ON WalkRequests.request_id=WalkRatings.request_id GROUP BY Users.username;
