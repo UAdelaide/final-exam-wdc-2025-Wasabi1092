@@ -173,7 +173,7 @@ input {
     width: auto;
 }
 
-#dogs td {
+#dogs td, #dogs th {
     width: auto;
     padding-right: 3em;
 }
